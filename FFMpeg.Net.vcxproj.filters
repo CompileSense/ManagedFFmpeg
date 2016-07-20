@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\AVCodec">
+      <UniqueIdentifier>{9ff60cb5-515c-4f65-9448-4140a06ef69e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AVFormat">
+      <UniqueIdentifier>{99a3ed3d-5c2e-429f-88b4-e531f68af04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AVUtil">
+      <UniqueIdentifier>{ad5c0026-346a-475c-83d2-0a034f9b84b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AVIO">
+      <UniqueIdentifier>{fb687321-a604-4dc6-81b1-d948594a667e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SWScale">
+      <UniqueIdentifier>{28b94195-cb7d-4af4-afff-c52edec27d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SWResample">
+      <UniqueIdentifier>{154c781b-fe2f-4717-8e3c-380395816554}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AVCodec.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVCodecContext.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVConstants.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVFMT.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVFormatContext.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVFormatParameters.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVFrac.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVFrame.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVMediaType.h">
+      <Filter>Header Files\AVUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="AVOutputFormat.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="AVPacket.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVRational.h">
+      <Filter>Header Files\AVUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="AVStream.h">
+      <Filter>Header Files\AVFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="CodecFlags.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelFormat.h">
+      <Filter>Header Files\AVUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="URL.h">
+      <Filter>Header Files\AVIO</Filter>
+    </ClInclude>
+    <ClInclude Include="ffmpeg_actual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CodecCap.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="Channel.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVSubtitle.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVSubtitleRect.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVSubtitleType.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="SwScaler.h">
+      <Filter>Header Files\SWScale</Filter>
+    </ClInclude>
+    <ClInclude Include="SWS_Flags.h">
+      <Filter>Header Files\SWScale</Filter>
+    </ClInclude>
+    <ClInclude Include="ResampleContext.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVSampleFormat.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="FFMpeg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AVCodecID.h">
+      <Filter>Header Files\AVCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="AVError.h">
+      <Filter>Header Files\AVUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="SWResampleContext.h">
+      <Filter>Header Files\SWResample</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,910 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly FFMpeg.Net, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class FFMpegNet.AVFormat.AVOutputFormat: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    FFMpegNet.AVCodec.AVCodecID[] RecommendedCodecs 'get ' : 
+    System.String Extensions 'get ' : 
+    System.String MimeType 'get ' : 
+    System.String Name 'get ' : 
+    System.String LongName 'get ' : 
+    FFMpegNet.AVFormat.AVFMT Flags 'get ' : 
+    FFMpegNet.AVCodec.AVCodecID AudioCodecID 'get ' : 
+    FFMpegNet.AVCodec.AVCodecID VideoCodecID 'get ' : 
+  Methods:
+    GuessFormat(String, String, String): PrivateScope, Public, Static, HideBySig
+    Wrap(AVOutputFormat*): PrivateScope, Public, Static, HideBySig
+    Empty(): PrivateScope, Public, Static, HideBySig
+    get_VideoCodecID(): PrivateScope, Public, HideBySig, SpecialName
+    get_AudioCodecID(): PrivateScope, Public, HideBySig, SpecialName
+    get_Flags(): PrivateScope, Public, HideBySig, SpecialName
+    Next(AVOutputFormat): PrivateScope, Public, Static, HideBySig
+    get_LongName(): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_MimeType(): PrivateScope, Public, HideBySig, SpecialName
+    get_Extensions(): PrivateScope, Public, HideBySig, SpecialName
+    GetCodecID(Int32): PrivateScope, Public, HideBySig
+    get_RecommendedCodecs(): PrivateScope, Public, HideBySig, SpecialName
+Class FFMpegNet.AVFormat.FFMpeg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 MinBufferSize : Public, Static
+  Properties:
+    FFMpegNet.AVFormat.AVOutputFormat[] OutputFormats 'get ' : 
+  Methods:
+    RegisterAll(): PrivateScope, Public, Static, HideBySig
+    get_OutputFormats(): PrivateScope, Public, Static, HideBySig, SpecialName
+Class FFMpegNet.AVCodec.AVSampleFormatHelper: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    BytesPerSample(AVSampleFormat): PrivateScope, Public, Static, HideBySig
+    IsPlanar(AVSampleFormat): PrivateScope, Public, Static, HideBySig
+Class FFMpegNet.AVCodec.AVFrame: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(AVFrame*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Int32 refCount : Public
+    Int32 objCount : Public, Static
+  Properties:
+    Int32 CodedFrameNumber 'get ' : 
+    Int32 Size 'get ' : 
+    System.ValueType LineSizes 'get ' IntPtr IsBoxed : 
+    System.ValueType Data 'get ' IntPtr IsBoxed : 
+    Boolean KeyFrame 'get ' : 
+    Int64 Pts  'get set' : 
+  Methods:
+    AddRef(): PrivateScope, Public, HideBySig
+    Release(): PrivateScope, Public, HideBySig
+    SetSample(Int32, Int16): PrivateScope, Public, HideBySig
+    GetSample(Int32): PrivateScope, Public, HideBySig
+    SetType(Int32): PrivateScope, Public, HideBySig
+    get_Pts(): PrivateScope, Public, HideBySig, SpecialName
+    set_Pts(Int64): PrivateScope, Public, HideBySig, SpecialName
+    get_KeyFrame(): PrivateScope, Public, HideBySig, SpecialName
+    GetData(Int32): PrivateScope, Public, HideBySig
+    GetLineSize(Int32): PrivateScope, Public, HideBySig
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+    get_LineSizes(): PrivateScope, Public, HideBySig, SpecialName
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    get_CodedFrameNumber(): PrivateScope, Public, HideBySig, SpecialName
+    Debug_DumpFrame(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.AVCodec.AVVideoFrame: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :FFMpegNet.AVCodec.AVFrame
+    Void .ctor(FFMpegNet.AVUtil.PixelFormat, Int32, Int32, System.ValueType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(FFMpegNet.AVUtil.PixelFormat, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    FFMpegNet.AVUtil.PixelFormat PixelFormat 'get ' : 
+    Int32 Height 'get ' : 
+    Int32 Width 'get ' : 
+  Methods:
+    SetPixel(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    get_PixelFormat(): PrivateScope, Public, HideBySig, SpecialName
+Class FFMpegNet.AVCodec.AVAudioFrame: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :FFMpegNet.AVCodec.AVFrame
+    Void .ctor(FFMpegNet.AVCodec.AVSampleFormat, Int32, Int32, Int32, System.ValueType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(FFMpegNet.AVCodec.AVSampleFormat, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    FFMpegNet.AVCodec.AVSampleFormat SampleFormat 'get ' : 
+    Int32 Channels 'get ' : 
+    Int32 SampleRate 'get ' : 
+    Int32 NumberOfSamples 'get ' : 
+  Methods:
+    get_NumberOfSamples(): PrivateScope, Public, HideBySig, SpecialName
+    get_SampleRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_Channels(): PrivateScope, Public, HideBySig, SpecialName
+    get_SampleFormat(): PrivateScope, Public, HideBySig, SpecialName
+Class FFMpegNet.AVCodec.AVPacket: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    AVPacket* _avPacket : Public
+  Properties:
+    Int64 Dts  'get set' : 
+    Int64 Pts  'get set' : 
+    Int32 StreamIndex 'get set' : 
+    Int32 Size 'get set' : 
+    System.ValueType Data 'get set' IntPtr IsBoxed : 
+    FFMpegNet.AVCodec.AVPKTFLAG Flags 'get set' : 
+  Methods:
+    FreeData(): PrivateScope, Public, HideBySig
+    get_Flags(): PrivateScope, Public, HideBySig, SpecialName
+    set_Flags(AVPKTFLAG): PrivateScope, Public, HideBySig, SpecialName
+    SetData(AVFrame): PrivateScope, Public, HideBySig
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+    set_Data(ValueType IntPtr IsBoxed): PrivateScope, Public, HideBySig, SpecialName
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    set_Size(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_StreamIndex(): PrivateScope, Public, HideBySig, SpecialName
+    set_StreamIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Pts(): PrivateScope, Public, HideBySig, SpecialName
+    set_Pts(Int64): PrivateScope, Public, HideBySig, SpecialName
+    get_Dts(): PrivateScope, Public, HideBySig, SpecialName
+    set_Dts(Int64): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.AVFormat.AVFormatContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    InterleavedWriteFrame(AVPacket): PrivateScope, Public, HideBySig
+    WriteFrame(AVPacket): PrivateScope, Public, HideBySig
+    Fixup(): PrivateScope, Public, HideBySig
+    SetOutputFormat(AVOutputFormat): PrivateScope, Public, HideBySig
+    GetOutputFormat(): PrivateScope, Public, HideBySig
+    OpenFile(String, AVIO_FLAG): PrivateScope, Public, HideBySig
+    CloseFile(): PrivateScope, Public, HideBySig
+    WriteHeader(): PrivateScope, Public, HideBySig
+    WriteTrailer(): PrivateScope, Public, HideBySig
+Class FFMpegNet.AVUtil.AVRational: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(AVRational*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 Numerator IsLong IsConst : Public
+    Int32 Denominator IsLong IsConst : Public
+  Methods:
+    RescaleQ(Int64, AVRational, AVRational): PrivateScope, Public, Static, HideBySig
+Class FFMpegNet.AVCodec.AVCodec: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int64[] ChannelLayouts 'get ' : 
+    Int32[] SupportedSampleRates 'get ' : 
+    FFMpegNet.AVCodec.AVSampleFormat[] SampleFormats 'get ' : 
+    FFMpegNet.AVUtil.PixelFormat[] PixelFormats 'get ' : 
+    FFMpegNet.AVUtil.AVRational[] SupportedFramerates 'get ' : 
+    FFMpegNet.AVCodec.CodecCap Capabilities 'get ' : 
+    FFMpegNet.AVCodec.AVCodecID CodecID 'get ' : 
+    FFMpegNet.AVUtil.AVMediaType MediaType 'get ' : 
+    System.String Name 'get ' : 
+    System.String LongName 'get ' : 
+  Methods:
+    FindEncoder(AVCodecID): PrivateScope, Public, Static, HideBySig
+    Wrap(AVCodec*): PrivateScope, Public, Static, HideBySig
+    Empty(): PrivateScope, Public, Static, HideBySig
+    RegisterAll(): PrivateScope, Public, Static, HideBySig
+    Next(AVCodec): PrivateScope, Public, Static, HideBySig
+    get_LongName(): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_MediaType(): PrivateScope, Public, HideBySig, SpecialName
+    get_CodecID(): PrivateScope, Public, HideBySig, SpecialName
+    get_Capabilities(): PrivateScope, Public, HideBySig, SpecialName
+    get_SupportedFramerates(): PrivateScope, Public, HideBySig, SpecialName
+    get_PixelFormats(): PrivateScope, Public, HideBySig, SpecialName
+    get_SampleFormats(): PrivateScope, Public, HideBySig, SpecialName
+    get_SupportedSampleRates(): PrivateScope, Public, HideBySig, SpecialName
+    get_ChannelLayouts(): PrivateScope, Public, HideBySig, SpecialName
+    CanEncode(): PrivateScope, Public, HideBySig
+    CanDecode(): PrivateScope, Public, HideBySig
+Class FFMpegNet.AVCodec.AVSubtitleRect: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(AVSubtitleRect*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Int32, Int32, Int32, Int32, System.Drawing.Bitmap, FFMpegNet.AVCodec.AVSubtitleType, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    GetX(): PrivateScope, Public, HideBySig
+    GetY(): PrivateScope, Public, HideBySig
+    GetW(): PrivateScope, Public, HideBySig
+    GetH(): PrivateScope, Public, HideBySig
+    GetNumberOfColors(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.AVCodec.AVSubtitle: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(AVSubtitle*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int16, Int32, Int32, FFMpegNet.AVCodec.AVSubtitleRect[], Int64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    GetPts(): PrivateScope, Public, HideBySig
+    GetStartDisplayTime(): PrivateScope, Public, HideBySig
+    GetEndDsplayTime(): PrivateScope, Public, HideBySig
+    GetPTS(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.AVCodec.AVCodecContext: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 StrictStdCompliance 'get set' : 
+    Int32 Cutoff 'get ' : 
+    Int32 BlockAlign 'get ' : 
+    Int32 FrameNumber 'get ' : 
+    Int32 Delay 'get ' : 
+    Int32 TicksPerFrame 'get ' : 
+    FFMpegNet.AVUtil.AVRational TimeBase 'get set' : 
+    FFMpegNet.AVCodec.CodecFlag2 Flags2 'get set' : 
+    FFMpegNet.AVCodec.CodecFlag Flags 'get set' : 
+    Int32 CompressionLevel 'get set' : 
+    Int32 GlobalQuality 'get set' : 
+    Int32 BitRateTolerance 'get set' : 
+    Int32 BitRate 'get set' : 
+    Int32 StreamCodecTag 'get ' : 
+    Int32 CodecTag 'get ' : 
+    FFMpegNet.AVCodec.AVCodecID CodecID 'get set' : 
+    FFMpegNet.AVUtil.AVMediaType MediaType 'get set' : 
+  Methods:
+    get_MediaType(): PrivateScope, Public, HideBySig, SpecialName
+    set_MediaType(AVMediaType): PrivateScope, Public, HideBySig, SpecialName
+    get_CodecID(): PrivateScope, Public, HideBySig, SpecialName
+    set_CodecID(AVCodecID): PrivateScope, Public, HideBySig, SpecialName
+    get_CodecTag(): PrivateScope, Public, HideBySig, SpecialName
+    get_StreamCodecTag(): PrivateScope, Public, HideBySig, SpecialName
+    get_BitRate(): PrivateScope, Public, HideBySig, SpecialName
+    set_BitRate(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BitRateTolerance(): PrivateScope, Public, HideBySig, SpecialName
+    set_BitRateTolerance(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_GlobalQuality(): PrivateScope, Public, HideBySig, SpecialName
+    set_GlobalQuality(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_CompressionLevel(): PrivateScope, Public, HideBySig, SpecialName
+    set_CompressionLevel(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Flags(): PrivateScope, Public, HideBySig, SpecialName
+    set_Flags(CodecFlag): PrivateScope, Public, HideBySig, SpecialName
+    get_Flags2(): PrivateScope, Public, HideBySig, SpecialName
+    set_Flags2(CodecFlag2): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeBase(): PrivateScope, Public, HideBySig, SpecialName
+    set_TimeBase(AVRational): PrivateScope, Public, HideBySig, SpecialName
+    get_TicksPerFrame(): PrivateScope, Public, HideBySig, SpecialName
+    get_Delay(): PrivateScope, Public, HideBySig, SpecialName
+    SetMBDecision(Int32): PrivateScope, Public, HideBySig
+    get_FrameNumber(): PrivateScope, Public, HideBySig, SpecialName
+    get_BlockAlign(): PrivateScope, Public, HideBySig, SpecialName
+    get_Cutoff(): PrivateScope, Public, HideBySig, SpecialName
+    get_StrictStdCompliance(): PrivateScope, Public, HideBySig, SpecialName
+    set_StrictStdCompliance(Int32): PrivateScope, Public, HideBySig, SpecialName
+    GetCodedFrame(): PrivateScope, Public, HideBySig
+    Encode(AVPacket, AVFrame): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EncodeSubtitle(ValueType IntPtr IsBoxed, Int32, AVSubtitle): PrivateScope, Public, HideBySig
+    FlushBuffers(): PrivateScope, Public, HideBySig
+    Open(AVCodec): PrivateScope, Public, HideBySig
+    Close(): PrivateScope, Public, HideBySig
+Class FFMpegNet.AVCodec.AVVideoCodecContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :FFMpegNet.AVCodec.AVCodecContext
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 QMax 'get set' : 
+    Int32 QMin 'get set' : 
+    Int32 CodedHeight 'get set' : 
+    Int32 CodedWidth 'get set' : 
+    Int32 Height 'get set' : 
+    Int32 Width 'get set' : 
+    FFMpegNet.AVUtil.PixelFormat PixelFormat 'get set' : 
+  Methods:
+    Wrap(AVCodecContext*): PrivateScope, Public, Static, HideBySig
+    Encode(AVPacket, AVFrame): PrivateScope, Public, Virtual, HideBySig
+    get_PixelFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_PixelFormat(PixelFormat): PrivateScope, Public, HideBySig, SpecialName
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    set_Width(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    set_Height(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_CodedWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_CodedWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_CodedHeight(): PrivateScope, Public, HideBySig, SpecialName
+    set_CodedHeight(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_QMin(): PrivateScope, Public, HideBySig, SpecialName
+    set_QMin(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_QMax(): PrivateScope, Public, HideBySig, SpecialName
+    set_QMax(Int32): PrivateScope, Public, HideBySig, SpecialName
+    SetGOPSize(Int32): PrivateScope, Public, HideBySig
+    SetMotionEstimationMethod(Int32): PrivateScope, Public, HideBySig
+    SetMaxBFrames(Int32): PrivateScope, Public, HideBySig
+Class FFMpegNet.AVCodec.AVAudioCodecContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :FFMpegNet.AVCodec.AVCodecContext
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 FrameSize 'get ' : 
+    FFMpegNet.AVCodec.AVSampleFormat SampleFormat 'get set' : 
+    Int64 ChannelLayout 'get set' : 
+    Int32 Channels 'get set' : 
+    Int32 SampleRate 'get set' : 
+  Methods:
+    Wrap(AVCodecContext*): PrivateScope, Public, Static, HideBySig
+    get_SampleRate(): PrivateScope, Public, HideBySig, SpecialName
+    set_SampleRate(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Channels(): PrivateScope, Public, HideBySig, SpecialName
+    set_Channels(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ChannelLayout(): PrivateScope, Public, HideBySig, SpecialName
+    set_ChannelLayout(Int64): PrivateScope, Public, HideBySig, SpecialName
+    get_SampleFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_SampleFormat(AVSampleFormat): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameSize(): PrivateScope, Public, HideBySig, SpecialName
+    Encode(AVPacket, AVFrame): PrivateScope, Public, Virtual, HideBySig
+Class FFMpegNet.AVCodec.ResampleContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, Int32, Int32, Int32, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Resample(AVAudioFrame, AVAudioFrame): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.AVFormat.AVConstants: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int64 NOPTS_VALUE : Public, Static
+Class FFMpegNet.AVUtil.AVError: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    MakeString(Int32): PrivateScope, Public, Static, HideBySig
+Class FFMpegNet.AVFormat.AVFrac: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(AVFrac*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int64 Denominator 'get ' : 
+    Int64 Numerator 'get ' : 
+    Int64 Value 'get ' : 
+  Methods:
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    get_Numerator(): PrivateScope, Public, HideBySig, SpecialName
+    get_Denominator(): PrivateScope, Public, HideBySig, SpecialName
+Class FFMpegNet.AVFormat.AVStream: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(FFMpegNet.AVFormat.AVFormatContext, FFMpegNet.AVCodec.AVCodec): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Duration 'get ' : 
+    FFMpegNet.AVCodec.AVCodecContext CodecContext 'get ' : 
+    Int32 Index 'get ' : 
+    FFMpegNet.AVUtil.AVRational LowestPossibleFramerateGuess 'get ' : 
+    FFMpegNet.AVUtil.AVRational AverageFrameRate 'get ' : 
+    FFMpegNet.AVUtil.AVRational TimeBase 'get ' : 
+    FFMpegNet.AVFormat.AVFrac PTS 'get ' : 
+  Methods:
+    get_PTS(): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeBase(): PrivateScope, Public, HideBySig, SpecialName
+    get_AverageFrameRate(): PrivateScope, Public, HideBySig, SpecialName
+    get_LowestPossibleFramerateGuess(): PrivateScope, Public, HideBySig, SpecialName
+    get_Index(): PrivateScope, Public, HideBySig, SpecialName
+    get_CodecContext(): PrivateScope, Public, HideBySig, SpecialName
+    get_Duration(): PrivateScope, Public, HideBySig, SpecialName
+Class FFMpegNet.SwScale.SwScaler: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, FFMpegNet.AVUtil.PixelFormat, Int32, Int32, FFMpegNet.AVUtil.PixelFormat, FFMpegNet.SwScale.SWS_Flag): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    FFMpegNet.AVUtil.PixelFormat DestinationFormat 'get ' : 
+    FFMpegNet.AVUtil.PixelFormat SourceFormat 'get ' : 
+    Int32 DestinationHeight 'get ' : 
+    Int32 DestinationWidth 'get ' : 
+    Int32 SourceHeight 'get ' : 
+    Int32 SourceWidth 'get ' : 
+  Methods:
+    Scale(AVFrame, Int32, Int32, AVFrame): PrivateScope, Public, HideBySig
+    get_SourceWidth(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceHeight(): PrivateScope, Public, HideBySig, SpecialName
+    get_DestinationWidth(): PrivateScope, Public, HideBySig, SpecialName
+    get_DestinationHeight(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceFormat(): PrivateScope, Public, HideBySig, SpecialName
+    get_DestinationFormat(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class FFMpegNet.SwResample.SwResampleContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int64, FFMpegNet.AVCodec.AVSampleFormat, Int32, Int64, FFMpegNet.AVCodec.AVSampleFormat, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Init(): PrivateScope, Public, HideBySig
+    Convert(ValueType IntPtr IsBoxed, Int32, ValueType IntPtr IsBoxed, Int32): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct FFMpegNet.AVCodec.AVCodecID: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.AVCodecID NONE = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MPEG1VIDEO = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MPEG2VIDEO = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MPEG2VIDEO_XVMC = 3 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID H261 = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID H263 = 5 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RV10 = 6 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RV20 = 7 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MJPEG = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MJPEGB = 9 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID LJPEG = 10 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SP5X = 11 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID JPEGLS = 12 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MPEG4 = 13 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RAWVIDEO = 14 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSMPEG4V1 = 15 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSMPEG4V2 = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSMPEG4V3 = 17 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMV1 = 18 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMV2 = 19 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID H263P = 20 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID H263I = 21 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FLV1 = 22 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SVQ1 = 23 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SVQ3 = 24 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DVVIDEO = 25 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID HUFFYUV = 26 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CYUV = 27 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID H264 = 28 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INDEO3 = 29 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP3 = 30 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID THEORA = 31 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ASV1 = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ASV2 = 33 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FFV1 = 34 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID _4XM = 35 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VCR1 = 36 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CLJR = 37 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MDEC = 38 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ROQ = 39 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INTERPLAY_VIDEO = 40 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID XAN_WC3 = 41 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID XAN_WC4 = 42 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RPZA = 43 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CINEPAK = 44 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WS_VQA = 45 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSRLE = 46 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSVIDEO1 = 47 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID IDCIN = 48 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID _8BPS = 49 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SMC = 50 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FLIC = 51 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TRUEMOTION1 = 52 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VMDVIDEO = 53 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MSZH = 54 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ZLIB = 55 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID QTRLE = 56 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SNOW = 57 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TSCC = 58 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ULTI = 59 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID QDRAW = 60 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VIXL = 61 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID QPEG = 62 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PNG = 63 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PPM = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PBM = 65 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PGM = 66 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PGMYUV = 67 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PAM = 68 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FFVHUFF = 69 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RV30 = 70 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RV40 = 71 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VC1 = 72 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMV3 = 73 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID LOCO = 74 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WNV1 = 75 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AASC = 76 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INDEO2 = 77 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FRAPS = 78 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TRUEMOTION2 = 79 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BMP = 80 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CSCD = 81 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MMVIDEO = 82 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ZMBV = 83 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AVS = 84 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SMACKVIDEO = 85 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID NUV = 86 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID KMVC = 87 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FLASHSV = 88 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CAVS = 89 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID JPEG2000 = 90 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VMNC = 91 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP5 = 92 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP6 = 93 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP6F = 94 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TARGA = 95 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DSICINVIDEO = 96 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TIERTEXSEQVIDEO = 97 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TIFF = 98 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID GIF = 99 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FFH264 = 100 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DXA = 101 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DNXHD = 102 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID THP = 103 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SGI = 104 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID C93 = 105 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BETHSOFTVID = 106 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PTX = 107 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TXD = 108 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP6A = 109 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AMV = 110 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VB = 111 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCX = 112 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SUNRAST = 113 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INDEO4 = 114 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INDEO5 = 115 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MIMIC = 116 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RL2 = 117 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID _8SVX_EXP = 118 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID _8SVX_FIB = 119 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ESCAPE124 = 120 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DIRAC = 121 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BFI = 122 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CMV = 123 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MOTIONPIXELS = 124 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TGV = 125 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TGQ = 126 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TQI = 127 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AURA = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AURA2 = 129 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID V210X = 130 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TMV = 131 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID V210 = 132 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DPX = 133 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MAD = 134 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FRWU = 135 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FLASHSV2 = 136 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID CDGRAPHICS = 137 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID R210 = 138 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ANM = 139 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BINKVIDEO = 140 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID IFF_ILBM = 141 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID IFF_BYTERUN1 = 142 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID KGV1 = 143 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID YOP = 144 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VP8 = 145 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S16LE = 65536 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S16BE = 65537 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U16LE = 65538 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U16BE = 65539 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S8 = 65540 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U8 = 65541 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_MULAW = 65542 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_ALAW = 65543 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S32LE = 65544 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S32BE = 65545 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U32LE = 65546 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U32BE = 65547 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S24LE = 65548 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S24BE = 65549 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U24LE = 65550 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_U24BE = 65551 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S24DAUD = 65552 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_ZORK = 65553 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_S16LE_PLANAR = 65554 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_DVD = 65555 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_F32BE = 65556 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_F32LE = 65557 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_F64BE = 65558 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_F64LE = 65559 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PCM_BLURAY = 65560 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_QT = 69632 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_WAV = 69633 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_DK3 = 69634 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_DK4 = 69635 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_WS = 69636 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_SMJPEG = 69637 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_MS = 69638 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_4XM = 69639 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_XA = 69640 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_ADX = 69641 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA = 69642 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_G726 = 69643 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_CT = 69644 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_SWF = 69645 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_YAMAHA = 69646 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_SBPRO_4 = 69647 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_SBPRO_3 = 69648 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_SBPRO_2 = 69649 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_THP = 69650 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_AMV = 69651 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA_R1 = 69652 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA_R3 = 69653 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA_R2 = 69654 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_EA_SEAD = 69655 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_EA_EACS = 69656 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA_XAS = 69657 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_EA_MAXIS_XA = 69658 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ADPCM_IMA_ISS = 69659 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AMR_NB = 73728 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AMR_WB = 73729 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RA_144 = 77824 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID RA_288 = 77825 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ROQ_DPCM = 81920 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID INTERPLAY_DPCM = 81921 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID XAN_DPCM = 81922 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SOL_DPCM = 81923 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP2 = 86016 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP3 = 86017 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AAC = 86018 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID AC3 = 86019 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DTS = 86020 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VORBIS = 86021 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DVAUDIO = 86022 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMAV1 = 86023 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMAV2 = 86024 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MACE3 = 86025 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MACE6 = 86026 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VMDAUDIO = 86027 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SONIC = 86028 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SONIC_LS = 86029 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID FLAC = 86030 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP3ADU = 86031 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP3ON4 = 86032 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SHORTEN = 86033 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ALAC = 86034 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WESTWOOD_SND1 = 86035 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID GSM = 86036 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID QDM2 = 86037 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID COOK = 86038 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TRUESPEECH = 86039 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TTA = 86040 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SMACKAUDIO = 86041 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID QCELP = 86042 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WAVPACK = 86043 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DSICINAUDIO = 86044 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID IMC = 86045 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MUSEPACK7 = 86046 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MLP = 86047 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID GSM_MS = 86048 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ATRAC3 = 86049 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID VOXWARE = 86050 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID APE = 86051 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID NELLYMOSER = 86052 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MUSEPACK8 = 86053 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SPEEX = 86054 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMAVOICE = 86055 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMAPRO = 86056 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID WMALOSSLESS = 86057 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ATRAC3P = 86058 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID EAC3 = 86059 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SIPR = 86060 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP1 = 86061 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TWINVQ = 86062 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TRUEHD = 86063 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MP4ALS = 86064 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID ATRAC1 = 86065 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BINKAUDIO_RDFT = 86066 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID BINKAUDIO_DCT = 86067 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DVD_SUBTITLE = 94208 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DVB_SUBTITLE = 94209 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TEXT = 94210 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID XSUB = 94211 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID SSA = 94212 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MOV_TEXT = 94213 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID HDMV_PGS_SUBTITLE = 94214 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID DVB_TELETEXT = 94215 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID TTF = 98304 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID PROBE = 102400 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVCodecID MPEG2TS = 131072 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVFormat.AVFMT: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVFormat.AVFMT NOFILE = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT NEEDNUMBER = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT SHOW_IDS = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT RAWPICTURE = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT GLOBALHEADER = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT NOTIMESTAMPS = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT GENERIC_INDEX = 256 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT TS_DISCONT = 512 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT VARIABLE_FPS = 1024 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVFormat.AVFMT NODIMENSIONS = 2048 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.CodecCap: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.CodecCap NONE = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap DRAW_HORIZ_BAND = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap DR1 = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap TRUNCATED = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap HWACCEL = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap DELAY = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap SMALL_LAST_FRAME = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap HWACCEL_VDPAU = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap SUBFRAMES = 256 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap EXPERIMENTAL = 512 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap CHANNEL_CONF = 1024 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap NEG_LINESIZES = 2048 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap FRAME_THREADS = 4096 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap SLICE_THREADS = 8192 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap PARAM_CHANGE = 16384 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap AUTO_THREADS = 32768 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap VARIABLE_FRAME_SIZE = 65536 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap INTRA_ONLY = 1073741824 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecCap LOSSLESS = -2147483648 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.AVSampleFormat: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.AVSampleFormat NONE = -1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat U8 = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat S16 = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat S32 = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat FLT = 3 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat DBL = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat U8P = 5 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat S16P = 6 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat S32P = 7 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat FLTP = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat DBLP = 9 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSampleFormat NB = 10 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVUtil.AVMediaType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVUtil.AVMediaType UNKNOWN = -1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType VIDEO = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType AUDIO = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType DATA = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType SUBTITLE = 3 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType ATTACHMENT = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.AVMediaType NB = 5 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVUtil.PixelFormat: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVUtil.PixelFormat NONE = -1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV420P = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUYV422 = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB24 = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR24 = 3 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV422P = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV444P = 5 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV410P = 6 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV411P = 7 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat GRAY8 = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat MONOWHITE = 9 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat MONOBLACK = 10 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat PAL8 = 11 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUVJ420P = 12 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUVJ422P = 13 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUVJ444P = 14 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat XVMC_MPEG2_MC = 15 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat XVMC_MPEG2_IDCT = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat UYVY422 = 17 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat UYYVYY411 = 18 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR8 = 19 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR4 = 20 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR4_BYTE = 21 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB8 = 22 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB4 = 23 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB4_BYTE = 24 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat NV12 = 25 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat NV21 = 26 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat ARGB = 27 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGBA = 28 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat ABGR = 29 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGRA = 30 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat GRAY16BE = 31 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat GRAY16LE = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV440P = 33 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUVJ440P = 34 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUVA420P = 35 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_H264 = 36 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_MPEG1 = 37 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_MPEG2 = 38 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_WMV3 = 39 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_VC1 = 40 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB48BE = 41 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB48LE = 42 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB565BE = 43 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB565LE = 44 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB555BE = 45 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB555LE = 46 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR565BE = 47 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR565LE = 48 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR555BE = 49 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR555LE = 50 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VAAPI_MOCO = 51 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VAAPI_IDCT = 52 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VAAPI_VLD = 53 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV420P16LE = 54 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV420P16BE = 55 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV422P16LE = 56 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV422P16BE = 57 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV444P16LE = 58 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat YUV444P16BE = 59 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat VDPAU_MPEG4 = 60 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat DXVA2_VLD = 61 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB444BE = 62 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat RGB444LE = 63 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR444BE = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat BGR444LE = 65 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat Y400A = 66 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVUtil.PixelFormat NB = 67 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.AVPKTFLAG: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.AVPKTFLAG KEY = 1 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVIO.URL: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVIO.URL RDONLY = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVIO.URL WRONLY = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVIO.URL RDWR = 2 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVIO.AVIO_FLAG: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVIO.AVIO_FLAG READ = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVIO.AVIO_FLAG WRITE = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVIO.AVIO_FLAG NONBLOCK = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVIO.AVIO_FLAG DIRECT = 32768 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.AVSubtitleType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.AVSubtitleType SUBTITLE_NONE = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSubtitleType SUBTITLE_BITMAP = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSubtitleType SUBTITLE_TEXT = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.AVSubtitleType SUBTITLE_ASS = 3 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.CodecFlag: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.CodecFlag NONE = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag QSCALE = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag _4MV = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag QPEL = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag GMC = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag MV0 = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag PART = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag INPUT_PRESERVED = 256 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag PASS1 = 512 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag PASS2 = 1024 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag EXTERN_HUFF = 4096 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag GRAY = 8192 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag EMU_EDGE = 16384 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag PSNR = 32768 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag TRUNCATED = 65536 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag NORMALIZE_AQP = 131072 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag INTERLACED_DCT = 262144 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag LOW_DELAY = 524288 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag ALT_SCAN = 1048576 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag GLOBAL_HEADER = 4194304 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag BITEXACT = 8388608 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag AC_PRED = 16777216 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag H263P_UMV = 33554432 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag CBP_RD = 67108864 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag QP_RD = 134217728 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag H263P_AIV = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag OBMC = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag LOOP_FILTER = 2048 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag H263P_SLICE_STRUCT = 268435456 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag INTERLACED_ME = 536870912 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag SVCD_SCAN_OFFSET = 1073741824 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag CLOSED_GOP = -2147483648 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.AVCodec.CodecFlag2: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.AVCodec.CodecFlag2 FAST = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 STRICT_GOP = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 NO_OUTPUT = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 LOCAL_HEADER = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 BPYRAMID = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 WPRED = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 MIXED_REFS = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 _8X8DCT = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 FASTPSKIP = 256 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 AUD = 512 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 BRDO = 1024 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 INTRA_VLC = 2048 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 MEMC_ONLY = 4096 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 DROP_FRAME_TIMECODE = 8192 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 SKIP_RD = 16384 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 CHUNKS = 32768 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 NON_LINEAR_QUANT = 65536 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 BIT_RESERVOIR = 131072 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 MBTREE = 262144 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 PSY = 524288 : Public, Static, Literal, HasDefault
+    FFMpegNet.AVCodec.CodecFlag2 SSIM = 1048576 : Public, Static, Literal, HasDefault
+Struct FFMpegNet.SwScale.SWS_Flag: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    FFMpegNet.SwScale.SWS_Flag NONE = 0 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag FAST_BILINEAR = 1 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag BILINEAR = 2 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag BICUBIC = 4 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag X = 8 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag POINT = 16 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag AREA = 32 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag BICUBLIN = 64 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag GAUSS = 128 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag SINC = 256 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag LANCZOS = 512 : Public, Static, Literal, HasDefault
+    FFMpegNet.SwScale.SWS_Flag SPLINE = 1024 : Public, Static, Literal, HasDefault
